@@ -75,16 +75,17 @@ def simular_operacion_transformador(
 # Configuración de la página web para que use pantalla ancha
 st.set_page_config(
     page_title="Dashboard de Transformadores", layout="wide"
+
 )
 
-st.title("⚡ Calculadora Analítica de Parámetros de Transformadores")
+st.title("Calculadora Analítica de Parámetros de Transformadores")
 st.markdown(
     "Modifica los valores en la barra lateral izquierda para recalcular todo el Dashboard en tiempo real."
 )
 
 # --- BARRA LATERAL IZQUIERDA (INPUTS) ---
 with st.sidebar:
-    st.header("📋 Panel de Parámetros")
+    st.header("Panel de Parámetros")
 
     st.subheader("Datos Nominales")
     s_nom = st.number_input("Potencia Nominal (VA):", value=15000)
