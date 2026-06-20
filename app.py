@@ -78,7 +78,7 @@ st.set_page_config(
 
 )
 
-st.title("Calculadora Analítica de Parámetros de Transformadoresxxxxx")
+st.title("Calculadora Analítica de Parámetros de Transformadores")
 st.markdown(
     "Modifica los valores en la barra lateral izquierda para recalcular todo el Dashboard en tiempo real."
 )
