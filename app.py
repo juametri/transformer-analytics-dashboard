@@ -129,6 +129,7 @@ if r_m and x_m and r_eq and x_eq:
     ax_circuito.axis("off")
     ax_circuito.set_xlim(0, 10)
     ax_circuito.set_ylim(0, 6)
+    ax_circuito.plot([0, 2], [5, 5], color="black", linewidth=2)
 
 
     rect_req = plt.Rectangle(
