@@ -152,50 +152,24 @@ if r_m and x_m and r_eq and x_eq:
     ax_circuito.add_patch(rect_rm)
     ax_circuito.add_patch(rect_xm)
 
-    ax_circuito.text(
-        1.5, 5.5, "Req", fontsize=10, weight="bold", ha="center"
-    )
-    ax_circuito.text(
-        5.5, 5.5, "Xeq", fontsize=10, weight="bold", ha="center"
-    )
-    ax_circuito.text(
-        1.8, 3.2, "Rm", fontsize=10, weight="bold", ha="right"
-    )
-    ax_circuito.text(
-        4.2, 3.2, "Xm", fontsize=10, weight="bold", ha="left"
-    )
-    ax_circuito.text(
-        1.5,
-        4.3,
-        f"{r_eq:.2f} \Omega",
-        fontsize=9,
-        ha="center",
-        backgroundcolor="white",
-    )
-    ax_circuito.text(
-        5.5,
-        4.3,
-        f"{x_eq:.2f} \Omega",
-        fontsize=9,
-        ha="center",
-        backgroundcolor="white",
-    )
-    ax_circuito.text(
-        2.5,
-        2.1,
-        f"{r_m:.1f} \Omega",
-        fontsize=9,
-        ha="left",
-        backgroundcolor="white",
-    )
-    ax_circuito.text(
-        3.5,
-        2.1,
-        f"{x_m:.1f} \Omega",
-        fontsize=9,
-        ha="right",
-        backgroundcolor="white",
-    )
+    # 3. COLOCACIÓN DE TEXTOS EN FILA VERTICAL PERFECTA (Sin estorbar a las líneas)
+
+    # Componentes Serie (Arriba)
+    ax_circuito.text(1.5, 5.5, "Req", fontsize=10, weight="bold", ha="center")
+    ax_circuito.text(1.5, 4.2, f"{r_eq:.2f} Ω", fontsize=9, ha="center", backgroundcolor="white")
+
+    ax_circuito.text(5.5, 5.5, "Xeq", fontsize=10, weight="bold", ha="center")
+    ax_circuito.text(5.5, 4.2, f"{x_eq:.2f} Ω", fontsize=9, ha="center", backgroundcolor="white")
+
+    # Componentes Paralelo (Estructura de Torre: Nombre arriba, Caja en medio, Valor abajo)
+    # Nombre "Rm" y "Xm" justo arriba de sus respectivos bloques
+    ax_circuito.text(2.5, 4.4, "Rm", fontsize=10, weight="bold", ha="center")
+    ax_circuito.text(3.5, 4.4, "Xm", fontsize=10, weight="bold", ha="center")
+
+    # Valores numéricos en Ohmios flotando JUSTO ABAJO de las cajas (en Y=2.5)
+    # Usamos backgroundcolor="white" para que la línea vertical pase POR DETRÁS del número limpiamente
+    ax_circuito.text(2.5, 2.5, f"{r_m:.1f} Ω", fontsize=9, ha="center", backgroundcolor="white")
+    ax_circuito.text(3.5, 2.5, f"{x_m:.1f} Ω", fontsize=9, ha="center", backgroundcolor="white")
     ax_circuito.set_title(
         "Circuito Equivalente Aproximado", fontsize=10, weight="bold"
     )
