@@ -135,8 +135,8 @@ if r_m and x_m and r_eq and x_eq:
     ax_circuito.plot([0, 8], [1, 1], color="black", linewidth=2)
 
     # Cables verticales hacia la rama paralelo (Techo)
-    ax_circuito.plot([2.5, 2.5], [5, 4.5], color="black", linewidth=2)
-    ax_circuito.plot([3.5, 3.5], [5, 4.5], color="black", linewidth=2)
+    ax_circuito.plot([2.5, 2.5], [5, 4], color="black", linewidth=2)
+    ax_circuito.plot([3.5, 3.5], [5, 4], color="black", linewidth=2)
 
     # Cables verticales hacia la rama paralelo (Piso)
     ax_circuito.plot([2.5, 2.5], [2, 1], color="black", linewidth=2)
@@ -185,7 +185,7 @@ if r_m and x_m and r_eq and x_eq:
         2.1,
         f"{r_m:.1f} \Omega",
         fontsize=9,
-        ha="center",
+        ha="left",
         backgroundcolor="white",
     )
     ax_circuito.text(
@@ -193,7 +193,7 @@ if r_m and x_m and r_eq and x_eq:
         2.1,
         f"{x_m:.1f} \Omega",
         fontsize=9,
-        ha="center",
+        ha="right",
         backgroundcolor="white",
     )
     ax_circuito.set_title(
