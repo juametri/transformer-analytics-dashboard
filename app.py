@@ -139,8 +139,8 @@ if r_m and x_m and r_eq and x_eq:
     ax_circuito.plot([3.5, 3.5], [5, 4], color="black", linewidth=2)
 
     # Cables verticales hacia la rama paralelo (Piso)
-    ax_circuito.plot([2.5, 2.5], [3, 1], color="black", linewidth=2)
-    ax_circuito.plot([3.5, 3.5], [3, 1], color="black", linewidth=2)
+    ax_circuito.plot([2.5, 2.5], [2.5, 1], color="black", linewidth=2)
+    ax_circuito.plot([3.5, 3.5], [2.5, 1], color="black", linewidth=2)
 
 # Dibujo de los bloques de los componentes (Alineación corregida)
     rect_req = plt.Rectangle((1, 4.7), 1.0, 0.6, facecolor="#ff7f0e", edgecolor="black", alpha=0.8)
@@ -161,15 +161,20 @@ if r_m and x_m and r_eq and x_eq:
     ax_circuito.text(5.5, 5.5, "Xeq", fontsize=10, weight="bold", ha="center")
     ax_circuito.text(5.5, 4.2, f"{x_eq:.2f} Ω", fontsize=9, ha="center", backgroundcolor="white")
 
-    # Componentes Paralelo (Estructura de Torre: Nombre arriba, Caja en medio, Valor abajo)
-    # Nombre "Rm" y "Xm" justo arriba de sus respectivos bloques
-    ax_circuito.text(2.5, 4.4, "Rm", fontsize=10, weight="bold", ha="left")
-    ax_circuito.text(3.5, 4.4, "Xm", fontsize=10, weight="bold", ha="right")
+    # --- Componentes Paralelo (En Torres Perfectas) ---
 
-    # Valores numéricos en Ohmios flotando JUSTO ABAJO de las cajas (en Y=2.5)
-    # Usamos backgroundcolor="white" para que la línea vertical pase POR DETRÁS del número limpiamente
-    ax_circuito.text(2.5, 2.5, f"{r_m:.1f} Ω", fontsize=9, ha="left", backgroundcolor="white")
-    ax_circuito.text(3.5, 2.5, f"{x_m:.1f} Ω", fontsize=9, ha="right", backgroundcolor="white")
+    # Nombres "Rm" y "Xm" flotando JUSTO ARRIBA de las cajas (Las cajas empiezan en Y=3.0 y terminan en Y=4.2)
+    # Al ponerlos en Y=4.4 con ha="center", se alinean perfecto sobre sus cables superiores
+    ax_circuito.text(2.5, 4.4, "Rm", fontsize=10, weight="bold", ha="center", backgroundcolor="white")
+    ax_circuito.text(3.5, 4.4, "Xm", fontsize=10, weight="bold", ha="center", backgroundcolor="white")
+
+    # Valores numéricos en Ohmios flotando ABAJO en el espacio vacío (Y=2.0)
+    # Como el cable baja hasta Y=1.0, la altura Y=2.0 queda exactamente a la mitad del cable.
+    # El truco 'backgroundcolor="white"' va a borrar la línea negra que pase por detrás del número.
+    ax_circuito.text(2.5, 2.0, f"{r_m:.1f} Ω", fontsize=9, ha="center", backgroundcolor="white")
+    ax_circuito.text(3.5, 2.0, f"{x_m:.1f} Ω", fontsize=9, ha="center", backgroundcolor="white")
+
+
     ax_circuito.set_title(
         "Circuito Equivalente Aproximado", fontsize=10, weight="bold"
     )
