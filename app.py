@@ -132,7 +132,7 @@ if r_m and x_m and r_eq and x_eq:
     ax_circuito.plot([0, 1], [5, 5], color="black", linewidth=2)
     ax_circuito.plot([2, 5], [5, 5], color="black", linewidth=2)
     ax_circuito.plot([6, 8], [5, 5], color="black", linewidth=2)
-    ax_circuito.plot([1, 8], [0, 0], color="black", linewidth=2)
+    ax_circuito.plot([0, 8], [2, 2], color="black", linewidth=2)
 
 
     rect_req = plt.Rectangle(
@@ -142,10 +142,10 @@ if r_m and x_m and r_eq and x_eq:
         (5, 4.7), 1.0, 0.6, facecolor="#9467bd", edgecolor="black", alpha=0.8
     )
     rect_rm = plt.Rectangle(
-        (2.2, 2.5), 0.6, 1.5, facecolor="#2ca02c", edgecolor="black", alpha=0.8
+        (2.2, 2.5), 0.6, 1, facecolor="#2ca02c", edgecolor="black", alpha=0.8
     )
     rect_xm = plt.Rectangle(
-        (3.2, 2.5), 0.6, 1.5, facecolor="#1f77b4", edgecolor="black", alpha=0.8
+        (3.2, 2.5), 0.6, 1, facecolor="#1f77b4", edgecolor="black", alpha=0.8
     )
     ax_circuito.add_patch(rect_req)
     ax_circuito.add_patch(rect_xeq)
