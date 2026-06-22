@@ -4,7 +4,7 @@ import numpy as np
 import streamlit as st
 
 # ==========================================
-# 1. PARTE MATEMÁTICA (TU BACKEND QUEDA IGUAL)
+# 1. PARTE MATEMÁTICA
 # ==========================================
 
 
@@ -78,20 +78,20 @@ st.set_page_config(
 
 )
 
-st.title("Calculadora Analítica de Parámetros de Transformadores")
+st.title("Calculadora de Parámetros de Transformadores")
 st.markdown(
-    "Modifica los valores en la barra lateral izquierda para recalcular todo el Dashboard en tiempo real."
+    "Modifica los valores en la barra lateral izquierda para recalcular todos los parametros del transformador "
 )
 
 # --- BARRA LATERAL IZQUIERDA (INPUTS) ---
 with st.sidebar:
-    st.header("Panel de Parámetros")
+    st.header("Parámetros")
 
     st.subheader("Datos Nominales")
     s_nom = st.number_input("Potencia Nominal (VA):", value=15000)
     v2_nom = st.number_input("Voltaje Secundario (V):", value=240)
     fp_sim = st.slider(
-        "F.P. Simulación:", min_value=0.1, max_value=1.0, value=0.8, step=0.05
+        "F.P. Simulación:", min_value=0.1, max_value=1.0, value=0.8, step=0.005
     )
 
     st.subheader("Prueba de Vacío (CA)")
@@ -115,7 +115,7 @@ if r_m and x_m and r_eq and x_eq:
         )
     )
 
-    # --- LIENZO DE MATPLOTLIB (Tus 5 paneles exactos) ---
+    #LIENZO DE MATPLOTLIB 5 paneles
     fig = plt.figure(figsize=(12, 8), tight_layout=True)
     gs = fig.add_gridspec(2, 3)
 
@@ -125,23 +125,11 @@ if r_m and x_m and r_eq and x_eq:
     ax_regulacion = fig.add_subplot(gs[1, 1])
     ax_fasores = fig.add_subplot(gs[1, 2])
 
-    # [AQUÍ VA EXACTAMENTE TODO EL CÓDIGO DE DIBUJO DE TUS PANELES]
-    # (El dibujo de las líneas del circuito, las curvas de eficiencia,
-    # la tabla ax_tabla.text(), y los vectores quiver de los fasores)
-
     # --- PANEL CIRCUITO ---
     ax_circuito.axis("off")
     ax_circuito.set_xlim(0, 10)
     ax_circuito.set_ylim(0, 6)
-    ax_circuito.plot([0, 2], [5, 5], color="black", linewidth=2)
-    ax_circuito.plot([0, 8], [1, 1], color="black", linewidth=2)
-    ax_circuito.plot([2.5, 2.5], [5, 4.5], color="black", linewidth=2)
-    ax_circuito.plot([3.5, 3.5], [5, 4.5], color="black", linewidth=2)
-    ax_circuito.plot([2.5, 2.5], [2, 1], color="black", linewidth=2)
-    ax_circuito.plot([3.5, 3.5], [2, 1], color="black", linewidth=2)
-    ax_circuito.plot([2, 4], [5, 5], color="black", linewidth=2)
-    ax_circuito.plot([4, 5], [5, 5], color="black", linewidth=2)
-    ax_circuito.plot([5, 8], [5, 5], color="black", linewidth=2)
+
 
     rect_req = plt.Rectangle(
         (1, 4.7), 1.0, 0.6, facecolor="#ff7f0e", edgecolor="black", alpha=0.8
