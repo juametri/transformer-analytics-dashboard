@@ -142,18 +142,11 @@ if r_m and x_m and r_eq and x_eq:
     ax_circuito.plot([2.5, 2.5], [2, 1], color="black", linewidth=2)
     ax_circuito.plot([3.5, 3.5], [2, 1], color="black", linewidth=2)
 
-rect_req = plt.Rectangle(
-        (1, 4.7), 1.0, 0.6, facecolor="#ff7f0e", edgecolor="black", alpha=0.8
-    )
-    rect_xeq = plt.Rectangle(
-        (5, 4.7), 1.0, 0.6, facecolor="#9467bd", edgecolor="black", alpha=0.8
-    )
-    rect_rm = plt.Rectangle(
-        (2.2, 2.5), 0.6, 1.5, facecolor="#2ca02c", edgecolor="black", alpha=0.8
-    )
-    rect_xm = plt.Rectangle(
-        (3.2, 2.5), 0.6, 1.5, facecolor="#1f77b4", edgecolor="black", alpha=0.8
-    )
+# Dibujo de los bloques de los componentes (Alineación corregida)
+    rect_req = plt.Rectangle((1, 4.7), 1.0, 0.6, facecolor="#ff7f0e", edgecolor="black", alpha=0.8)
+    rect_xeq = plt.Rectangle((5, 4.7), 1.0, 0.6, facecolor="#9467bd", edgecolor="black", alpha=0.8)
+    rect_rm = plt.Rectangle((2.2, 2.5), 0.6, 1.5, facecolor="#2ca02c", edgecolor="black", alpha=0.8)
+    rect_xm = plt.Rectangle((3.2, 2.5), 0.6, 1.5, facecolor="#1f77b4", edgecolor="black", alpha=0.8)
     ax_circuito.add_patch(rect_req)
     ax_circuito.add_patch(rect_xeq)
     ax_circuito.add_patch(rect_rm)
